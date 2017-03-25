@@ -1,0 +1,3 @@
+rootProject.name = 'KursAplikacjeWebowe'
+
+include '01_serwlety'

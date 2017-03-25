@@ -1,0 +1,22 @@
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'maven'
+    apply plugin: 'war'
+    apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+
+    repositories {
+        mavenCentral()
+    }
+
+    group = 'pl.samouczekprogramisty.kursaplikacjewebowe'
+    version = '1.0-SNAPSHOT'
+
+    dependencies {
+        providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+        testCompile group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
+        testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+    }
+}
