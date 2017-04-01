@@ -9,6 +9,7 @@ subprojects {
         mavenCentral()
     }
 
+    sourceCompatibility = 1.8
     group = 'pl.samouczekprogramisty.kursaplikacjewebowe'
     version = '1.0-SNAPSHOT'
 
