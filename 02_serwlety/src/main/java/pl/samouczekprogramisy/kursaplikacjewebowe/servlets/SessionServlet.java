@@ -1,4 +1,4 @@
-package pl.samouczekprogramisy.kursaplikacjewebowe.serwlety;
+package pl.samouczekprogramisy.kursaplikacjewebowe.servlets;
 
 
 import javax.servlet.ServletException;

@@ -2,3 +2,4 @@ rootProject.name = 'KursAplikacjeWebowe'
 
 include '01_serwlety'
 include '02_serwlety'
+include '03_filtry'

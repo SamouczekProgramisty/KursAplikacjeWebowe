@@ -1,4 +1,4 @@
-package pl.samouczekprogramisy.kursaplikacjewebowe.serwlety.exercise;
+package pl.samouczekprogramisy.kursaplikacjewebowe.servlets.exercise;
 
 
 import javax.servlet.ServletException;

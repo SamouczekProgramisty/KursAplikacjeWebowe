@@ -1,4 +1,4 @@
-package pl.samouczekprogramisty.kursaplikacjewebowe.serwlety;
+package pl.samouczekprogramisty.kursaplikacjewebowe.servlets;
 
 
 import org.joda.time.DateTime;
