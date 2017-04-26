@@ -12,11 +12,11 @@ import java.io.PrintWriter;
 public class PathServlet extends HttpServlet {
 
     @Override
+    // By ANY means that's not the way of creating views!
+    // But until we reach JSP I'll stick to it.
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter responseWriter = resp.getWriter();
 
-        // By ANY means that's not the way of generating views.
-        // It's just here as an example, referr to JSP to see how to prepare basic views in a better way.
         responseWriter.write("<html><body>");
         responseWriter.write("<p>ContextPath: " + req.getContextPath() + "</p>");
         responseWriter.write("<p>ServletPath: " + req.getServletPath() + "</p>");

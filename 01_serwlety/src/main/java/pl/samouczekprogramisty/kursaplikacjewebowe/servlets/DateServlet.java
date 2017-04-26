@@ -14,6 +14,8 @@ import java.io.PrintWriter;
 public class DateServlet extends HttpServlet {
 
     @Override
+    // By ANY means that's not the way of creating views!
+    // But until we reach JSP I'll stick to it.
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         DateTime now = DateTime.now();
         PrintWriter responseOutput = response.getWriter();

@@ -17,11 +17,11 @@ public class SessionServlet extends HttpServlet {
     private static final String VISIT_COUNTER_ATTR = "visitCounter";
 
     @Override
+    // By ANY means that's not the way of creating views!
+    // But until we reach JSP I'll stick to it.
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter responseWriter = resp.getWriter();
 
-        // By ANY means that's not the way of generating views.
-        // It's just here as an example, referr to JSP to see how to prepare basic views in a better way.
         responseWriter.write("<html><body>");
 
         HttpSession session = req.getSession();

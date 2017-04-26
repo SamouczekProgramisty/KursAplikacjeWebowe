@@ -13,6 +13,8 @@ import java.util.Enumeration;
 public class SimpleServlet extends HttpServlet {
 
     @Override
+    // By ANY means that's not the way of creating views!
+    // But until we reach JSP I'll stick to it.
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         PrintWriter responseWriter = resp.getWriter();
 

@@ -15,6 +15,8 @@ import java.util.Map;
 public class MyServlet extends HttpServlet {
 
     @Override
+    // By ANY means that's not the way of creating views!
+    // But until we reach JSP I'll stick to it.
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter writer = resp.getWriter();
         writer.write("<html><body>");

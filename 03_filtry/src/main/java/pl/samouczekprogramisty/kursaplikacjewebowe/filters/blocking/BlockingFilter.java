@@ -22,6 +22,8 @@ public class BlockingFilter implements Filter{
     }
 
     @Override
+    // By ANY means that's not the way of creating views!
+    // But until we reach JSP I'll stick to it.
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         for (Map.Entry<String, String[]> parameter : httpRequest.getParameterMap().entrySet()) {
