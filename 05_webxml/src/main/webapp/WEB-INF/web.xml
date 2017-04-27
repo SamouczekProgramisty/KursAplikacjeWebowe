@@ -1,0 +1,36 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <servlet>
+        <servlet-name>my-servlet</servlet-name>
+        <servlet-class>pl.samouczekprogramisty.kursaplikacjewebowe.webxml.xml.XMLConfiguredServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>my-servlet</servlet-name>
+        <url-pattern>/servlet-url-xml</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>my-filter</filter-name>
+        <filter-class>pl.samouczekprogramisty.kursaplikacjewebowe.webxml.xml.XMLConfiguredFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>my-filter</filter-name>
+        <url-pattern>/servlet-url-xml</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>my-filter</filter-name>
+        <servlet-name>my-servlet</servlet-name>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>pl.samouczekprogramisty.kursaplikacjewebowe.webxml.xml.XMLConfiguredListener</listener-class>
+    </listener>
+
+</web-app>
