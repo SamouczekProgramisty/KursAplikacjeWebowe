@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.stream.StreamSupport;
 
 @WebServlet("/cookies")
 public class CookieServlet extends HttpServlet {
@@ -20,9 +22,8 @@ public class CookieServlet extends HttpServlet {
         PrintWriter responseWriter = resp.getWriter();
 
         responseWriter.write("<html><body>");
-        for (Cookie cookie : req.getCookies()) {
-            responseWriter.write("<p>" + cookie.getName() + " " + cookie.getValue() + "</p>");
-        }
+        Arrays.stream(req.getCookies())
+                .forEach(cookie -> responseWriter.format("<p>%s %s</p>", cookie.getName(), cookie.getValue()));
 
         Cookie cookie = new Cookie("custom-cookie", "bum bum cyk cyk");
         cookie.setMaxAge(10);

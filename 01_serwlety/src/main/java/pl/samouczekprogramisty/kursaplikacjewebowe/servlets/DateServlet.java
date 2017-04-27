@@ -19,6 +19,6 @@ public class DateServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         DateTime now = DateTime.now();
         PrintWriter responseOutput = response.getWriter();
-        responseOutput.append("<html><body>" + now.toString() + "</body></html>");
+        responseOutput.format("<html><body>%s</body></html>", now.toString());
     }
 }

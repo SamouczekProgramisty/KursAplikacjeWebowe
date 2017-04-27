@@ -4,3 +4,6 @@ include '01_serwlety'
 include '02_serwlety'
 include '03_filtry'
 include '04_kontekst'
+include '05_webxml'
+include '05_webxml_annotations'
+
