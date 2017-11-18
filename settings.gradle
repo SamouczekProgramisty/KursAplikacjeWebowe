@@ -6,5 +6,5 @@ include '03_filtry'
 include '04_kontekst'
 include '05_webxml'
 include '05_webxml_annotations'
-include '06_soap_endpoint'
+include '07_soap_endpoint'
 
