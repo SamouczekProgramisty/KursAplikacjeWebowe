@@ -1,0 +1,10 @@
+dependencies {
+    providedCompile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1'
+}
+
+task explodedWar(type: Copy) {
+    into "$buildDir/explodedWar"
+    with war
+}
+
+war.dependsOn explodedWar
