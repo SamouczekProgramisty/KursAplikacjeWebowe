@@ -2,11 +2,13 @@ package pl.samouczekprogramisty.kursaplikacjewebowe.rest;
 
 import org.junit.Before;
 import org.junit.Test;
+import pl.samouczekprogramisty.kursaplikacjewebowe.rest.exceptions.ReservationException;
 
 import java.time.LocalDateTime;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 
 public class LocalDateTimeConverterTest {
 
@@ -28,5 +30,16 @@ public class LocalDateTimeConverterTest {
     @Test
     public void shouldBeAbleToCreateStringFromDateTime() {
         assertThat(converter.toString(DATE_REPRESENTATION), is(STRING_REPRESENTATION));
+    }
+
+    @Test
+    public void shouldThrowAnExceptionWhenPassedStringIsMallformed() {
+        try {
+            converter.fromString("xxx");
+            fail("Exception should be thrown!");
+        } catch (ReservationException exception) {
+            assertThat(exception.getStatusCode(), is(400));
+            assertThat(exception.getResponseMessage(), is("Passed date `xxx` couldn't parsed!"));
+        }
     }
 }
