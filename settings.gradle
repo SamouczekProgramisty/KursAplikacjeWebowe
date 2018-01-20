@@ -8,4 +8,5 @@ include '05_webxml'
 include '05_webxml_annotations'
 include '06_rest_endpoint'
 include '07_soap_endpoint'
+include '07_rest_crud'
 
