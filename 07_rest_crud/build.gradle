@@ -6,7 +6,7 @@ dependencies {
     providedCompile group: 'javax.enterprise', name: 'cdi-api', version: '2.0'
     // 1.0.0 is the version available in Tomee's classpath:
     // https://github.com/apache/tomee/blob/master/pom.xml#L106
-    providedCompile group: 'org.apache.johnzon', name: 'johnzon-jsonb', version: '1.0.0'
+    // providedCompile group: 'org.apache.johnzon', name: 'johnzon-jsonb', version: '1.0.0'
 }
 
 task explodedWar(type: Copy) {

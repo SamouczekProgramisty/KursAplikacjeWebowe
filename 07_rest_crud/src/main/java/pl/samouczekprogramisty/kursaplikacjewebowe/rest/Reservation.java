@@ -1,7 +1,5 @@
 package pl.samouczekprogramisty.kursaplikacjewebowe.rest;
 
-import org.apache.johnzon.mapper.JohnzonConverter;
-
 import javax.validation.constraints.Future;
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotEmpty;
@@ -20,12 +18,10 @@ public class Reservation {
 
     @FutureOrPresent
     @NotNull
-    @JohnzonConverter(LocalDateTimeConverter.class)
     private LocalDateTime start;
 
     @Future
     @NotNull
-    @JohnzonConverter(LocalDateTimeConverter.class)
     private LocalDateTime end;
 
     public Reservation() {

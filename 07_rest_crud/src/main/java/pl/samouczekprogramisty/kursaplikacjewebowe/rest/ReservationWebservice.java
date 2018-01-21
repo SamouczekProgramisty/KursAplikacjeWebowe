@@ -2,6 +2,7 @@ package pl.samouczekprogramisty.kursaplikacjewebowe.rest;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -21,6 +22,7 @@ import java.net.URISyntaxException;
 public class ReservationWebservice {
 
     @Inject
+    @SuppressWarnings("unused")
     private ReservationDAO dao;
 
     @GET
@@ -30,7 +32,7 @@ public class ReservationWebservice {
 
     @GET
     @Path("{id}")
-    public Response getReservation(@PathParam("id") Integer id) {
+    public Response getReservation(@PathParam("id") @Min(0) Integer id) {
         Reservation reservation = dao.getById(id);
         if (reservation != null) {
             return Response.ok(reservation).build();
@@ -40,7 +42,7 @@ public class ReservationWebservice {
 
     @POST
     @Path("{id}")
-    public Response updateReservation(@PathParam("id") Integer id, @Valid Reservation reservation) {
+    public Response updateReservation(@PathParam("id") @Min(0) Integer id, @Valid Reservation reservation) {
         boolean hasReservation = dao.getById(id) != null;
         if (hasReservation) {
             dao.updateReservation(id, reservation);
@@ -51,7 +53,7 @@ public class ReservationWebservice {
 
     @DELETE
     @Path("{id}")
-    public Response deleteReservation(@PathParam("id") Integer id) {
+    public Response deleteReservation(@PathParam("id") @Min(0) Integer id) {
         Reservation reservation = dao.deleteReservation(id);
         if (reservation != null) {
             return Response.ok(reservation).build();
