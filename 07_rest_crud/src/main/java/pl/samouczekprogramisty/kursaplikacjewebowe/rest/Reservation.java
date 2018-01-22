@@ -24,9 +24,6 @@ public class Reservation {
     @NotNull
     private LocalDateTime end;
 
-    public Reservation() {
-    }
-
     public String getName() {
         return name;
     }
