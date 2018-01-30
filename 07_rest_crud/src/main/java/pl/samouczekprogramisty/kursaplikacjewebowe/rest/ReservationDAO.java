@@ -10,7 +10,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @ApplicationScoped
 public class ReservationDAO {
-
     private final Map<Integer, Reservation> reservations = Collections.synchronizedMap(new TreeMap<>());;
 
     private final AtomicInteger lastId = new AtomicInteger(0);

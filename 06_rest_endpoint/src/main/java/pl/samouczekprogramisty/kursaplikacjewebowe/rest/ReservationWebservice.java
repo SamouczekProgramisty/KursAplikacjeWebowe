@@ -21,7 +21,7 @@ public class ReservationWebservice {
         return Response.ok("Oto rezerwacja o identyfikatorze " + id + " :)").build();
     }
 
-    @POST
+    @PUT
     @Path("{id}")
     public Response updateReservation(@PathParam("id") Integer id) {
         return Response.ok("Zmodyfikowaliśmy rezerwację o numerze " + id + " :)").build();
@@ -33,7 +33,7 @@ public class ReservationWebservice {
         return Response.ok("Usunęliśmy rezerwację o numerze " + id + " :)").build();
     }
 
-    @PUT
+    @POST
     public Response createReservation() {
         return Response.ok("Rezerwacja została utworzona!").build();
     }

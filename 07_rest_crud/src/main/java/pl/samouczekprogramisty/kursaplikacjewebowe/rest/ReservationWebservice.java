@@ -40,7 +40,7 @@ public class ReservationWebservice {
         return Response.status(Response.Status.NOT_FOUND).build();
     }
 
-    @POST
+    @PUT
     @Path("{id}")
     public Response updateReservation(@PathParam("id") @Min(0) Integer id, @Valid Reservation reservation) {
         boolean hasReservation = dao.getById(id) != null;
@@ -61,7 +61,7 @@ public class ReservationWebservice {
         return Response.status(Response.Status.NOT_FOUND).build();
     }
 
-    @PUT
+    @POST
     public Response createReservation(@Valid Reservation reservation) {
         int newId = dao.createReservation(reservation);
         URI location;
