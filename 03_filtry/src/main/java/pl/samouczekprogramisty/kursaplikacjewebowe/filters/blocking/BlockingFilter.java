@@ -13,20 +13,19 @@ import java.util.Map;
 
 
 @WebFilter("/blockedServlet")
-public class BlockingFilter implements Filter{
+public class BlockingFilter implements Filter {
 
     private static final String BLOCK = "blokuj";
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
+    public void init(FilterConfig filterConfig) {
     }
 
     @Override
     // By ANY means that's not the way of creating views!
     // But until we reach JSP I'll stick to it.
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        HttpServletRequest httpRequest = (HttpServletRequest) request;
-        for (Map.Entry<String, String[]> parameter : httpRequest.getParameterMap().entrySet()) {
+        for (Map.Entry<String, String[]> parameter : request.getParameterMap().entrySet()) {
             for (String parameterValue : parameter.getValue()) {
                 if (parameterValue.equals(BLOCK)) {
                     response.getWriter().write("<html><body>Zablokowane!</body></head>");
