@@ -1,7 +1,6 @@
 subprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
-    apply plugin: 'maven'
     apply plugin: 'war'
     apply from: 'https://raw.github.com/gretty-gradle-plugin/gretty/master/pluginScripts/gretty.plugin'
 
